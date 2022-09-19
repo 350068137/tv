@@ -2,7 +2,7 @@ name: clone
 
 on:
   schedule:
-    - cron: 45 0/4 * * *
+    - cron: 0 0 06 * * ?
   workflow_dispatch:
 
 jobs:
