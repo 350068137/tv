@@ -15,12 +15,13 @@ jobs:
       run: |
         rm -rf TVBox
         git clone --depth=1 https://gitcode.net/qq_26898231/TVBox
+        cp TVBox/* /home/runner/work/tv/tv  
     - name: Update spider jar
       uses: EndBug/add-and-commit@v7
       with:
         default_author: github_actions
         message: 'update spider jar'
-        add: "['TVBox/tv.json /']"
+        add: "['tv.json']"
     - name: Upload APK
       uses: actions/upload-artifact@v2
       with:
