@@ -20,6 +20,7 @@ jobs:
         git clone --depth=1 https://gitcode.net/qq_26898231/TVBox
         rm -rf TVBox/.git
         cp -r TVBox/* ${{ github.workspace }}
+        rm -rf TVBox
         sed -i 's/gitcode.net\/qq_26898231\/TVBox\/-\/raw\/main/raw.iqiq.io\/mymine\/tv\/main/g' ${{ github.workspace }}/tv.json
     - name: Update spider jar
       uses: EndBug/add-and-commit@v7
