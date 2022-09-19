@@ -18,6 +18,7 @@ jobs:
       run: |
         rm -rf TVBox
         git clone --depth=1 https://gitcode.net/qq_26898231/TVBox
+        echo ${{ github.workspace }}
         rm -rf TVBox/.git
         cp -r TVBox/* /home/runner/work/tv/tv
         sed -i 's/gitcode.net\/qq_26898231\/TVBox\/-\/raw\/main/raw.iqiq.io\/mymine\/tv\/main/g' /home/runner/work/tv/tv/tv.json
