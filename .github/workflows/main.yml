@@ -17,7 +17,6 @@ jobs:
         
     - name: Clone project
       run: |
-        rm -rf TVBox
         git clone --depth=1 https://gitcode.net/qq_26898231/TVBox
         rm -rf TVBox/.git
         cp -r TVBox/* ${{ github.workspace }}
