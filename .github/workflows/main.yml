@@ -13,14 +13,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-
-    - name: set timezone
-      run: |
-        export TZ='Asia/Shanghai'
-        source ~/.bashrc
-        sudo rm -f /etc/localtime
-        sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-        sudo timedatectl set-timezone 'Asia/Shanghai'
         
     - name: Clone project
       run: |
