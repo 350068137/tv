@@ -5,7 +5,7 @@ on:
     - cron: 50 0/4 * * *
   workflow_dispatch:
 env:
-  TZ: Asia/Shanghai
+  TZ: "Asia/HongKong"
 jobs:
   build:
 
