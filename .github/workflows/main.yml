@@ -2,7 +2,7 @@ name: TVBox JSON
 
 on:
   schedule:
-    - cron: 0 10 * * *
+    - cron: 25 9 * * *
   workflow_dispatch:
 env:
   TZ: Asia/Shanghai
