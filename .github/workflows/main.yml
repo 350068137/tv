@@ -4,8 +4,8 @@ on:
   schedule:
     - cron: 45 0/4 * * * 
   workflow_dispatch:
-#env:
-#  TZ: Asia/Shanghai
+env:
+  TZ: Asia/Shanghai
 jobs:
   build:
 
