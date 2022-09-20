@@ -1,8 +1,8 @@
 name: TVBox JSON
-
+# 触发器
 on:
   schedule:
-    - cron: 25 9 * * *
+    - cron: '37 1 * * *' #每周天在国际标准时间15点(北京时间+8，即 23:00)
   workflow_dispatch:
 env:
   TZ: Asia/Shanghai
