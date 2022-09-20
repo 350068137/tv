@@ -2,7 +2,7 @@ name: TVBox JSON
 # 触发器
 on:
   schedule:
-    - cron: 50 14 * * *
+    - cron: 50 0/4 * * *
   workflow_dispatch:
 env:
   TZ: Asia/Shanghai
@@ -18,8 +18,9 @@ jobs:
     - name: Clone project
       run: |
         git clone --depth=1 https://gitcode.net/qq_26898231/TVBox
-        rm -rf TVBox/.git
         cp -r TVBox/* ${{ github.workspace }}
+        rm -rf .git
+        rm -rf .github
         rm -rf TVBox
         sed -i 's/gitcode.net\/qq_26898231\/TVBox\/-\/raw\/main/raw.iqiq.io\/mymine\/tv\/main/g' ${{ github.workspace }}/tv.json
     - name: Update files
