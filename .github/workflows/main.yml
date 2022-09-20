@@ -2,7 +2,7 @@ name: TVBox JSON
 # 触发器
 on:
   schedule:
-    - cron: 37 14 * * * 
+    - cron: 0 14 * * 2
   workflow_dispatch:
 env:
   TZ: Asia/Shanghai
@@ -28,8 +28,8 @@ jobs:
         default_author: github_actions
         message: 'update files'
         add: ${{ github.workspace }}/*
-    - name: Upload files
+    - name: Upload files 
       uses: actions/upload-artifact@v2
       with:
         name: TVBox
-        path: TVBox/*
+        path: ${{ github.workspace }}/*
