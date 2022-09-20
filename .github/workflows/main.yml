@@ -14,7 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-        
+    - name: set timezone
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
+	              
     - name: Clone project
       run: |
         git clone --depth=1 https://gitcode.net/qq_26898231/TVBox
