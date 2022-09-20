@@ -2,10 +2,10 @@ name: TVBox JSON
 # 触发器
 on:
   schedule:
-    - cron: '45 1 * * 2' #每周天在国际标准时间15点(北京时间+8，即 23:00)
+    - cron: '48 1 * * 2' #每周天在国际标准时间15点(北京时间+8，即 23:00)
   workflow_dispatch:
 #env:
-  TZ: Asia/Shanghai
+#  TZ: Asia/Shanghai
 jobs:
   build:
 
