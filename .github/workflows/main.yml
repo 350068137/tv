@@ -2,10 +2,10 @@ name: TVBox JSON
 # 触发器
 on:
   schedule:
-    - cron: 0 12 * * *
+    - cron: 0 19 * * *
   workflow_dispatch:
 env:
-  TZ: "Asia/Hong_Kong"
+  TZ: Asia/Shanghai
 jobs:
   build:
 
