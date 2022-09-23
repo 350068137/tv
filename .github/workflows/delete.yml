@@ -1,0 +1,28 @@
+name: TVBox JSON
+
+# 触发器
+on:
+  schedule:
+    - cron: '0 15 * * 0' #每周天在国际标准时间15点(北京时间+8，即 23:00)
+  workflow_dispatch:
+    inputs:
+      root_sol:
+        description: "TVBox JSON"
+        required: true
+        default: "tv"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 检出代码
+      - uses: actions/checkout@v2
+      # 删除旧的工作流
+      - name: Delete TVBox JSON
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 0 # 全部删除只留正在跑的一条
+          keep_minimum_runs: 0 # 全部删除只留正在跑的一条
+          delete_workflow_pattern: 'TVBox JSON'
