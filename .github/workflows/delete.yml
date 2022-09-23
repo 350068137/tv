@@ -1,4 +1,4 @@
-name: TVBox JSON
+name: TVBox
 
 # 触发器
 on:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       root_sol:
-        description: "TVBox JSON"
+        description: "TVBox"
         required: true
         default: "tv"
 
@@ -25,4 +25,4 @@ jobs:
           repository: ${{ github.repository }}
           retain_days: 0 # 全部删除只留正在跑的一条
           keep_minimum_runs: 0 # 全部删除只留正在跑的一条
-          delete_workflow_pattern: 'TVBox JSON'
+          delete_workflow_pattern: 'TVBox'
