@@ -16,12 +16,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 检出代码
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
       # 删除旧的工作流
-      - name: Delete TVBox JSON
-        uses: Mattraks/delete-workflow-runs@v2
-        with:
-          token: ${{ github.token }}
-          repository: ${{ github.repository }}
-          retain_days: 0 # 全部删除只留正在跑的一条
-          keep_minimum_runs: 0 # 全部删除只留正在跑的一条
+    - name: Delete TVBox JSON
+      uses: Mattraks/delete-workflow-runs@v2
+      with:
+        token: ${{ github.token }}
+        repository: ${{ github.repository }}
+        retain_days: 0 # 全部删除只留正在跑的一条
+        keep_minimum_runs: 0 # 全部删除只留正在跑的一条
+    - name: Clone project
+      run: |
+        git clone --depth=1 https://gitcode.net/qq_26898231/TVBox
+        rm -rf TVBox/.git
+        sed -i 's/gitcode.net\/qq_26898231\/TVBox\/-\/raw\/main/raw.fastgit.org\/mymine\/tv\/main/g' ${{ github.workspace }}/TVBox/tv.json
+       
+    - name: Upload files actions
+      uses: actions/upload-artifact@v2
+      with:
+        name: TVBox
+        path: TVBox/*
+
+    - name: delete files
+      run: |
+        cp -r TVBox/* ${{ github.workspace }}
+        rm -rf TVBox        
+        
+    - name: Update files github
+      uses: EndBug/add-and-commit@v7
+      with:
+        default_author: github_actions
+        message: 'update files actions'
+        add: ${{ github.workspace }}/*
+
