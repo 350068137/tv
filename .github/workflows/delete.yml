@@ -23,13 +23,13 @@ jobs:
       with:
         token: ${{ github.token }}
         repository: ${{ github.repository }}
-        retain_days: 0 # 只保留最新
+        retain_days: 0 # 只保留最新6条
         keep_minimum_runs: 5 # 只保留最新6条
     - name: Clone project
       run: |
         git clone --depth=1 https://gitcode.net/bd/v Projects
-        mv 8.txt tv.json
         rm -rf Projects/.git
+        mv Projects/8.txt Projects/tv.json
         sed -i 's/gitcode.net\/bd\/v\/-\/raw\/main/raw.fastgit.org\/mymine\/tv\/main/g' ${{ github.workspace }}/Projects/tv.json
        
     - name: Upload files actions
