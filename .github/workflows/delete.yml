@@ -29,6 +29,7 @@ jobs:
       run: |
         git clone --depth=1 https://gitcode.net/bd/v Projects
         rm -rf Projects/.git
+        mv -r 8.txt tv.json
         sed -i 's/gitcode.net\/bd\/v\/-\/raw\/main/raw.fastgit.org\/mymine\/tv\/main/g' ${{ github.workspace }}/Projects/tv.json
        
     - name: Upload files actions
