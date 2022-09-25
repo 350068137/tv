@@ -1,13 +1,13 @@
-name: TVBox
+name: Projects
 
 # 触发器
 on:
   schedule:
-    - cron: '0 15 * * 0' #每周天在国际标准时间15点(北京时间+8，即 23:00)
+    - cron: '0 19 * * 0' #每周天在国际标准时间19点(北京时间+8，即 03:00)
   workflow_dispatch:
 #    inputs:
 #      root_sol:
-#        description: "TVBox"
+#        description: "Projects"
 #        required: true
 #        default: "tv"
 
@@ -18,7 +18,7 @@ jobs:
       # 检出代码
     - uses: actions/checkout@v2
       # 删除旧的工作流
-    - name: Delete TVBox JSON
+    - name: Delete Projects JSON
       uses: Mattraks/delete-workflow-runs@v2
       with:
         token: ${{ github.token }}
@@ -27,20 +27,20 @@ jobs:
         keep_minimum_runs: 6 # 只保留最新6条
     - name: Clone project
       run: |
-        git clone --depth=1 https://gitcode.net/qq_26898231/TVBox
-        rm -rf TVBox/.git
-        sed -i 's/gitcode.net\/qq_26898231\/TVBox\/-\/raw\/main/raw.fastgit.org\/mymine\/tv\/main/g' ${{ github.workspace }}/TVBox/tv.json
+        git clone --depth=1 https://gitcode.net/bd/v Projects
+        rm -rf Projects/.git
+        sed -i 's/gitcode.net\/bd\/v\/-\/raw\/main/raw.fastgit.org\/mymine\/tv\/main/g' ${{ github.workspace }}/Projects/tv.json
        
     - name: Upload files actions
       uses: actions/upload-artifact@v2
       with:
-        name: TVBox
-        path: TVBox/*
+        name: Projects
+        path: Projects/*
 
     - name: delete files
       run: |
-        cp -r TVBox/* ${{ github.workspace }}
-        rm -rf TVBox        
+        cp -r Projects/* ${{ github.workspace }}
+        rm -rf Projects        
         
     - name: Update files github
       uses: EndBug/add-and-commit@v7
