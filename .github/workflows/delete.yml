@@ -18,7 +18,7 @@ jobs:
       # 检出代码
     - uses: actions/checkout@v2
       # 删除旧的工作流
-    - name: Delete Projects JSON
+    - name: Delete workflow
       uses: Mattraks/delete-workflow-runs@v2
       with:
         token: ${{ github.token }}
