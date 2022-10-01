@@ -997,6 +997,8 @@ CHC高清电影,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226463/in
 凤凰资讯,http://playtv-live.ifeng.com:80/live/06OLEEWQKN4_tv2.m3u8
 凤凰资讯,https://playtv-live.ifeng.com/live/06OLEEWQKN4_tv2.m3u8
 凤凰中文,https://api.leonardpark.dev/live/icable/108
+星空卫视,http://50.7.220.74:8278/xingkong/playlist.m3u8?tid=m61d2d25a9adb&ct=18335&tsum=bc464e6fb89211029ad1b93ac62830aa
+星空卫视,http://120.84.96.71:808/hls/79/index.m3u8#http://113.64.147.77:808/hls/87/index
 有线新闻台,https://api.leonardpark.dev/live/icable/109
 有线直播新闻台,https://api.leonardpark.dev/live/icable/110
 Now直播台,https://api.leonardpark.dev/live/now/331
