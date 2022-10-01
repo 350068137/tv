@@ -27,10 +27,10 @@ jobs:
         keep_minimum_runs: 4 # 只保留最新5条
     - name: Clone project
       run: |
-        git clone --depth=1 https://gitcode.net/bd/py Projects
+        git clone --depth=1 https://gitcode.net/bd/v Projects
         rm -rf Projects/.git
         mv Projects/8.txt Projects/tv.json
-        sed -i 's/gitcode.net\/bd\/py\/-\/raw\/main/raw.fastgit.org\/mymine\/tv\/main/g' ${{ github.workspace }}/Projects/tv.json
+        sed -i 's/gitcode.net\/bd\/v\/-\/raw\/main/raw.fastgit.org\/mymine\/tv\/main/g' ${{ github.workspace }}/Projects/tv.json
        
     - name: Upload files actions
       uses: actions/upload-artifact@v2
